@@ -41,7 +41,6 @@ export class AuthenticationController {
 
  
   @UseGuards(RoleGuard(Role.Admin))
-  @UseGuards(JwtAuthenticationGuard)
   @Get()
  
   authenticate(@Req() request: RequestWithUser) {
