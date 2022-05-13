@@ -1,11 +1,12 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import * as Joi from '@hapi/joi'
+import * as Joi from '@hapi/joi';
 import { DatabaseModule } from './database/database.module';
 import { UsersModule } from './users/users.module';
 import { AirlineModule } from './airline/airline.module';
 import { FlightModule } from './flight/flight.module';
 import { ReservationModule } from './reservation/reservation.module';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [
@@ -17,7 +18,7 @@ import { ReservationModule } from './reservation/reservation.module';
         POSTGRES_PASSWORD: Joi.string().required(),
         POSTGRES_DB: Joi.string().required(),
         PORT: Joi.number(),
-      })
+      }),
     }),
     DatabaseModule,
     UsersModule,
@@ -25,7 +26,7 @@ import { ReservationModule } from './reservation/reservation.module';
     FlightModule,
     ReservationModule,
   ],
-  controllers: [],
+  controllers: [AppController],
   providers: [],
 })
 export class AppModule {}
