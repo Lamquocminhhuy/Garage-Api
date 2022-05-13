@@ -1,0 +1,52 @@
+### Register
+POST http://localhost:3000/authentication/register
+Content-Type: application/json
+
+{
+  "email": "tester70@gmail.com",
+  "password": "tester69",
+  "firstName": "tester69",
+  "lastName": "tester69",
+  "address": "tester69",
+  "dayofbirth": "01/01/2000",
+  "gender": "male",
+  "phoneNumber": "012345678"
+}
+
+### Login
+POST http://localhost:3000/authentication/log-in
+Content-Type: application/json
+
+{
+  "email": "tester70@gmail.com",
+  "password": "tester69"
+}
+
+### Logout
+POST http://localhost:3000/authentication/log-out
+Content-Type: application/json
+
+{
+  "email": "tester70@gmail.com",
+  "password": "tester69"
+}
+
+### Authentication
+GET http://localhost:3000/authentication/
+
+
+
+### Register test
+POST http://localhost:3000/users/test
+Content-Type: application/json
+
+{
+  "email": "tester69@gmail.com",
+  "password": "tester69",
+  "firstName": "tester69",
+  "lastName": "tester69",
+  "address": "tester69",
+  "dayofbirth": "01/01/2000",
+  "gender": "male",
+  "phoneNumber": "012345678"
+}

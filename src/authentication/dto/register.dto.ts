@@ -1,4 +1,4 @@
-export class CreateUserDto {
+export class RegisterDto {
   email: string;
   password: string;
   firstName: string;
@@ -9,4 +9,4 @@ export class CreateUserDto {
   phoneNumber: string;
 }
 
-export default CreateUserDto;
+export default RegisterDto;
