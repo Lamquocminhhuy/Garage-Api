@@ -4,7 +4,7 @@ import Role from './roles.enum';
 @Entity()
 class User {
   @PrimaryGeneratedColumn()
-  public id?: number;
+  public id: number;
 
   @Column({ unique: true })
   public email: string;
@@ -36,7 +36,6 @@ class User {
     default: Role.Guest,
   })
   public role: Role;
-  
 }
 
 export default User;

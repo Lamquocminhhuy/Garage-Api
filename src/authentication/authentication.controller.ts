@@ -10,7 +10,7 @@ import RoleGuard from '../users/role.guard';
 import Role from '../users/roles.enum';
 
 @Controller('authentication')
-@ApiTags('authentication')
+@ApiTags('Authentication')
 export class AuthenticationController {
   constructor(
     private readonly authenticationService: AuthenticationService
