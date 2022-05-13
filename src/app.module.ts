@@ -7,6 +7,7 @@ import { AirlineModule } from './airline/airline.module';
 import { FlightModule } from './flight/flight.module';
 import { ReservationModule } from './reservation/reservation.module';
 import { AppController } from './app.controller';
+import { AuthenticationModule } from './authentication/authentication.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { AppController } from './app.controller';
     AirlineModule,
     FlightModule,
     ReservationModule,
+    AuthenticationModule,
   ],
   controllers: [AppController],
   providers: [],
