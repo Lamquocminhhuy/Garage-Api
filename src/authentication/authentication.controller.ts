@@ -6,6 +6,8 @@ import RequestWithUser from './requestWithUser.interface';
 import { LocalAuthenticationGuard } from './localAuthentication.guard';
 import JwtAuthenticationGuard from './jwt-authentication.guard';
 import { ApiTags } from '@nestjs/swagger';
+import RoleGuard from '../users/role.guard';
+import Role from '../users/roles.enum';
 
 @Controller('authentication')
 @ApiTags('authentication')
@@ -37,8 +39,11 @@ export class AuthenticationController {
     return response.sendStatus(200);
   }
 
+ 
+  @UseGuards(RoleGuard(Role.Admin))
   @UseGuards(JwtAuthenticationGuard)
   @Get()
+ 
   authenticate(@Req() request: RequestWithUser) {
     const user = request.user;
     user.password = undefined;

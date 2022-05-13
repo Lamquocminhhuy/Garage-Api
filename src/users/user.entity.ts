@@ -1,5 +1,5 @@
-import { IsDateString } from 'class-validator';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import Role from './roles.enum';
 
 @Entity()
 class User {
@@ -29,6 +29,14 @@ class User {
 
   @Column()
   public phoneNumber: string;
+
+  @Column({
+    type: 'enum',
+    enum: Role,
+    default: Role.Guest,
+  })
+  public role: Role;
+  
 }
 
 export default User;
