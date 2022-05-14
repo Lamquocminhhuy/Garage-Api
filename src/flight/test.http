@@ -1,0 +1,12 @@
+### Create a flight
+POST http://localhost:3000/flight
+content-type: application/json
+
+{
+    "flight_deptr_date": "10/14/2022",
+    "deptr_country": "Viet Nam",
+    "dest_country": "Thailand",
+    "deptr_time": "11:15",
+    "arrival_time": "12:45"
+
+}
