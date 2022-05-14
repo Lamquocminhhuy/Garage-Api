@@ -1,7 +1,10 @@
 ### Create Airline
 POST http://localhost:3000/airline
-content: application/json
+content-type: application/json
 
 {
-    "no_of_seats": 100
+    "no_of_seats": 100120120
 }
+
+### Get all
+GET http://localhost:3000/airline

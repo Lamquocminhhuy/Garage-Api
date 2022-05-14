@@ -3,8 +3,8 @@ POST http://localhost:3000/authentication/register
 Content-Type: application/json
 
 {
-  "email": "tester70@gmail.com",
-  "password": "tester69",
+  "email": "admin@gmail.com",
+  "password": "admin",
   "firstName": "tester69",
   "lastName": "tester69",
   "address": "tester69",
@@ -18,9 +18,13 @@ POST http://localhost:3000/authentication/log-in
 Content-Type: application/json
 
 {
-  "email": "tester70@gmail.com",
-  "password": "tester69"
+  "email": "admin@gmail.com",
+  "password": "admin"
 }
+
+
+### Get user info
+GET http://localhost:3000/users/1
 
 ### Logout
 POST http://localhost:3000/authentication/log-out

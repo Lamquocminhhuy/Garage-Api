@@ -1,4 +1,12 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Exclude } from 'class-transformer';
+import {
+  Column,
+  Entity,
+  ManyToMany,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import Reservation from '../reservation/reservation.entity';
 import Role from './roles.enum';
 
 @Entity()
@@ -9,6 +17,7 @@ class User {
   @Column({ unique: true })
   public email: string;
 
+  @Exclude()
   @Column()
   public password: string;
 
@@ -36,6 +45,9 @@ class User {
     default: Role.Guest,
   })
   public role: Role;
+
+  @ManyToMany(() => Reservation, (reservation: Reservation) => reservation.user)
+  public reservation?: Reservation[];
 }
 
 export default User;

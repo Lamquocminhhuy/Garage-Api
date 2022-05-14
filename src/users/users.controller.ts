@@ -11,6 +11,13 @@ import RoleGuard from './role.guard';
   model: {
     type: User,
   },
+  query: {
+    join:{
+      reservation: {
+        eager: true
+      }
+    }
+  }
 })
 @UseGuards(RoleGuard(Role.Admin))
 @Controller('users')

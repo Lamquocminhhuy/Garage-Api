@@ -49,7 +49,8 @@ export class AuthenticationController {
     return response.sendStatus(200);
   }
 
-  @UseGuards(RoleGuard(Role.Admin))
+  // @UseGuards(RoleGuard(Role.Admin))
+  @UseGuards(JwtAuthenticationGuard)
   @Get()
   authenticate(@Req() request: RequestWithUser) {
     const user = request.user;

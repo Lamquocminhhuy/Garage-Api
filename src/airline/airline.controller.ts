@@ -13,6 +13,13 @@ import CreateAirlineDto from './dto/CreateAirline.dto';
     dto: {
       create: CreateAirlineDto,
     },
+    query: {
+      join: {
+        flights: {
+          eager: true,
+        },
+      },
+    },
   })
 @Controller('airline')
 @ApiTags('Airlines')
