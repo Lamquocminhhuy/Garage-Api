@@ -11,10 +11,21 @@ import Flight from './flight.entity';
 import { ApiTags } from '@nestjs/swagger';
 import RoleGuard from '../users/role.guard';
 import Role from '../users/roles.enum';
+import CreateFlightDto from './dto/createFlight.dto';
 
 @Crud({
   model: {
     type: Flight,
+  },
+  dto: {
+    create: CreateFlightDto,
+  },
+  query: {
+    join: {
+      airline: {
+        eager: true,
+      },
+    },
   },
 })
 @Controller('flight')

@@ -7,6 +7,11 @@ content-type: application/json
     "deptr_country": "Viet Nam",
     "dest_country": "Thailand",
     "deptr_time": "11:15",
-    "arrival_time": "12:45"
+    "arrival_time": "12:45",
+    "airline": 1
 
 }
+
+
+### Get all
+GET http://localhost:3000/flight

@@ -1,11 +1,12 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import Airline from '../airline/airline.entity'
 
 @Entity()
 class Flight {
   @PrimaryGeneratedColumn()
   public id: number;
 
-  @Column({ type: 'date', unique: true })
+  @Column({ type: 'date'})
   public flight_deptr_date: string;
 
   @Column()
@@ -20,6 +21,9 @@ class Flight {
 
   @Column({ type: 'time' })
   public arrival_time: string;
+
+  @ManyToOne(() => Airline, (airline: Airline) => airline.id)
+  public airline: Airline;
 }
 
 export default Flight;
