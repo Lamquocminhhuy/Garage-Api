@@ -1,0 +1,27 @@
+### Pay
+
+POST http://localhost:3000/paypal/payment
+content-type: application/json
+
+{
+    
+}
+
+### Get
+GET http://localhost:3000/paypal/test
+
+###
+POST http://localhost:3000/paypal/order
+content-type: application/json
+
+{
+    
+}
+
+### Capture
+POST http://localhost:3000/paypal/capture/6U9422360K479142T
+content-type: application/json
+
+{
+    
+}

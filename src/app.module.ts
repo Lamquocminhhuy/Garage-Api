@@ -8,6 +8,7 @@ import { FlightModule } from './flight/flight.module';
 import { ReservationModule } from './reservation/reservation.module';
 import { AppController } from './app.controller';
 import { AuthenticationModule } from './authentication/authentication.module';
+import { PaypalModule } from './paypal/paypal.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import { AuthenticationModule } from './authentication/authentication.module';
     FlightModule,
     ReservationModule,
     AuthenticationModule,
+    PaypalModule,
   ],
   controllers: [AppController],
   providers: [],
