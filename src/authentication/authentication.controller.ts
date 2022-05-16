@@ -72,15 +72,9 @@ export class AuthenticationController {
   }
 
 
-  @ApiBody({
-    schema: {
-      properties: {
-        email: { type: 'string' },
-        password: { type: 'string' },
-      },
-    },
-  })
-  @UseGuards(JwtAuthenticationGuard)
+ 
+
+
   @Post('log-out')
   async logOut(@Res() response: Response) {
     response.setHeader(

@@ -28,10 +28,7 @@ Content-Type: application/json
 POST http://localhost:3000/authentication/log-out
 Content-Type: application/json
 
-{
-  "email": "tester70@gmail.com",
-  "password": "tester69"
-}
+
 
 ### Authentication
 GET http://localhost:3000/authentication/
