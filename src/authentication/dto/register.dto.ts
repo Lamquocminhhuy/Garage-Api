@@ -7,6 +7,7 @@ export class RegisterDto {
   dob: Date;
   gender: string;
   phoneNumber: string;
+  role: string;
 }
 
 export default RegisterDto;

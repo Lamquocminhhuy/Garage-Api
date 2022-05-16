@@ -15,11 +15,12 @@ export class AuthenticationService {
     private readonly configService: ConfigService
   ) {}
 
-  public async register(registrationData: RegisterDto) {
+  public async register(registrationData: RegisterDto){
     const hashedPassword = await bcrypt.hash(registrationData.password, 10);
     try {
       const createdUser = await this.usersService.create({
         ...registrationData,
+
         password: hashedPassword
       });
       createdUser.password = undefined;

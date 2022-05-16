@@ -20,6 +20,8 @@ import { ReservationService } from './reservation.service';
   },
   dto: {
     create: CreateReservationDto,
+    update: CreateReservationDto, 
+    replace: CreateReservationDto
   },
   query: {
     join: {

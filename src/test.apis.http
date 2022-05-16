@@ -3,14 +3,15 @@ POST http://localhost:3000/authentication/register
 Content-Type: application/json
 
 {
-  "email": "admin@gmail.com",
+  "email": "dweswswsdeded@gmail.com",
   "password": "admin",
   "firstName": "tester69",
   "lastName": "tester69",
   "address": "tester69",
   "dayofbirth": "01/01/2000",
   "gender": "male",
-  "phoneNumber": "012345678"
+  "phoneNumber": "0123456789",
+  "role": "Employee"
 }
 
 ### Login

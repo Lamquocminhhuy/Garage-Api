@@ -12,6 +12,8 @@ import CreateAirlineDto from './dto/CreateAirline.dto';
     },
     dto: {
       create: CreateAirlineDto,
+      update: CreateAirlineDto,
+      replace: CreateAirlineDto
     },
     query: {
       join: {

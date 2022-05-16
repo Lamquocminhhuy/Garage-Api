@@ -5,10 +5,17 @@ import { UsersService } from './users.service';
 import { ApiTags } from '@nestjs/swagger';
 import Role from './roles.enum';
 import RoleGuard from './role.guard';
+import CreateUserDto from './dto/createUser.dto';
 
 @Crud({
   model: {
     type: User,
+  },
+
+  dto: {
+    create: CreateUserDto,
+    update: CreateUserDto,
+    replace: CreateUserDto
   },
   query: {
     join: {
