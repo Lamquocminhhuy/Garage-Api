@@ -1,12 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { HttpService } from '@nestjs/axios';
 import { ConfigService } from '@nestjs/config';
 import fetch from 'node-fetch';
 
 @Injectable()
 export class PayPalService {
   constructor(
-    private httpService: HttpService,
+
     private readonly configService: ConfigService,
   ) {}
 
@@ -32,7 +31,7 @@ export class PayPalService {
   }
 
   async createOrder() {
-    const purchaseAmount = '1234.00'; // TODO: pull prices from a database
+    const purchaseAmount = '1234.00'; 
     const accessToken = await this.generateAccessToken();
     const url = `${this.configService.get(
       'PAYPAL_API_URL',

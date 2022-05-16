@@ -4,15 +4,11 @@ import { Response } from 'express';
 import PayPalService from './paypal.service';
 import { RequestWithPayPal } from './requestWithPaypal';
 
-@ApiTags('paypal')
+@ApiTags('Paypal Payment')
 @Controller('paypal')
 export default class PaypalController {
   constructor(private readonly paypalService: PayPalService) {}
 
-  @Get('test')
-  async test() {
-    return await this.paypalService.generateAccessToken();
-  }
 
   @Post('order')
   async makePayment() {
