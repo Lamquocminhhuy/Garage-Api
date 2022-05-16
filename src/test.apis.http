@@ -10,8 +10,7 @@ Content-Type: application/json
   "address": "tester69",
   "dayofbirth": "01/01/2000",
   "gender": "male",
-  "phoneNumber": "0123456789",
-  "role": "Employee"
+  "phoneNumber": "0123456789"
 }
 
 ### Login
