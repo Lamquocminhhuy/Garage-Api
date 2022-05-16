@@ -23,8 +23,6 @@ Content-Type: application/json
 }
 
 
-### Get user info
-GET http://localhost:3000/users/1
 
 ### Logout
 POST http://localhost:3000/authentication/log-out
@@ -39,18 +37,47 @@ Content-Type: application/json
 GET http://localhost:3000/authentication/
 
 
-
-### Register test
-POST http://localhost:3000/users/test
-Content-Type: application/json
+### Create reservation
+POST http://localhost:3000/reservation
+content-type: application/json
 
 {
-  "email": "tester69@gmail.com",
-  "password": "tester69",
-  "firstName": "tester69",
-  "lastName": "tester69",
-  "address": "tester69",
-  "dayofbirth": "01/01/2000",
-  "gender": "male",
-  "phoneNumber": "012345678"
+    "r_date": "04/15/2022",
+    "total_amount": 1,
+    "class": "Business",
+    "flight": [{
+        "id": 18
+    }]
 }
+
+
+
+### Get all reservation
+GET http://localhost:3000/reservation/
+
+### Create a flight
+POST http://localhost:3000/flight
+content-type: application/json
+
+{
+    "flight_deptr_date": "04/19/2022",
+    "deptr_country": "Viet Nam",
+    "dest_country": "Singapore",
+    "deptr_time": "11:15",
+    "arrival_time": "12:45",
+    "airline": 1
+}
+
+### Get all flights
+GET http://localhost:3000/flight
+
+### Create Airline
+POST http://localhost:3000/airline
+content-type: application/json
+
+{
+    "no_of_seats": 100120120
+}
+
+### Get all airline
+GET http://localhost:3000/airline
