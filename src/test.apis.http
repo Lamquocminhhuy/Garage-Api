@@ -43,7 +43,7 @@ content-type: application/json
     "total_amount": 1,
     "class": "Business",
     "flight": [{
-        "id": 18
+        "id": 1
     }]
 }
 
@@ -73,8 +73,17 @@ POST http://localhost:3000/airline
 content-type: application/json
 
 {
-    "no_of_seats": 100120120
+    "no_of_seats": 90
 }
 
 ### Get all airline
 GET http://localhost:3000/airline
+
+
+### PAYPALPOST 
+POST http://localhost:3000/paypal/order
+content-type: application/json
+
+{
+ 
+}

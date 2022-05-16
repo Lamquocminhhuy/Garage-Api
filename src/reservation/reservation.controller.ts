@@ -1,5 +1,5 @@
 import { Body, Controller, Req, UseGuards } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBody, ApiTags } from '@nestjs/swagger';
 import {
   Crud,
   CrudController,
@@ -20,8 +20,8 @@ import { ReservationService } from './reservation.service';
   },
   dto: {
     create: CreateReservationDto,
-    update: CreateReservationDto, 
-    replace: CreateReservationDto
+    update: CreateReservationDto,
+    replace: CreateReservationDto,
   },
   query: {
     join: {
@@ -30,7 +30,7 @@ import { ReservationService } from './reservation.service';
       },
       flight: {
         eager: true,
-      }
+      },
     },
   },
 })
@@ -42,16 +42,38 @@ export class ReservationController implements CrudController<Reservation> {
     private reservationService: ReservationService,
   ) {}
 
+  @ApiBody({
+    schema: {
+      properties: {
+        r_date: { type: 'string' },
+        total_amount: { type: 'string' },
+        class: { type: 'string' },
+        flight: { type: 'number' },
+    
+      },
+    },
+    examples: {
+      a: {
+          summary: "Example",
+          description: `"r_date": "04/15/2022",
+          "total_amount": 1,
+          "class": "Business",
+          "flight": [{
+              "id": 18
+          }]`,
+   
+      }
+  }
+  })
+
+  
+  
   @Override()
   @UseGuards(JwtAuthenticationGuard)
   createOne(
     @Body() reservation: CreateReservationDto,
     @Req() request: RequestWithUser,
   ) {
- 
-    return this.reservationService.creatReservation(
-      reservation,
-      request.user,
-    );
+    return this.reservationService.creatReservation(reservation, request.user);
   }
 }

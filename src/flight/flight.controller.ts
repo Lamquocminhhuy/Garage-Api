@@ -4,11 +4,12 @@ import {
   CrudController,
   CrudRequest,
   Override,
+  ParsedBody,
   ParsedRequest,
 } from '@nestjsx/crud';
 import { FlightService } from './flight.service';
 import Flight from './flight.entity';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBody, ApiTags } from '@nestjs/swagger';
 import RoleGuard from '../users/role.guard';
 import Role from '../users/roles.enum';
 import CreateFlightDto from './dto/createFlight.dto';
@@ -20,8 +21,7 @@ import CreateFlightDto from './dto/createFlight.dto';
   dto: {
     create: CreateFlightDto,
     update: CreateFlightDto,
-    replace: CreateFlightDto
-
+    replace: CreateFlightDto,
   },
   query: {
     join: {
@@ -38,6 +38,25 @@ export class FlightController implements CrudController<Flight> {
 
   get base(): CrudController<Flight> {
     return this;
+  }
+
+  @UseGuards(RoleGuard(Role.Admin))
+ 
+  @ApiBody({
+    schema: {
+      properties: {
+        flight_deptr_date: { type: 'string' },
+        deptr_country: { type: 'string' },
+        dest_country: { type: 'string' },
+        deptr_time: { type: 'string' },
+        arrival_time: { type: 'string' },
+        flight: {type: 'array'}
+      },
+    },
+  })
+  @Override()
+  createOne(@ParsedRequest() req: CrudRequest, @ParsedBody() dto: Flight) {
+    return this.base.createOneBase(req, dto);
   }
 
   @Override()

@@ -16,7 +16,13 @@ import RegisterDto from './dto/register.dto';
 import RequestWithUser from './requestWithUser.interface';
 import { LocalAuthenticationGuard } from './localAuthentication.guard';
 import JwtAuthenticationGuard from './jwt-authentication.guard';
-import { ApiBody, ApiParam, ApiProperty, ApiQuery, ApiTags } from '@nestjs/swagger';
+import {
+  ApiBody,
+  ApiParam,
+  ApiProperty,
+  ApiQuery,
+  ApiTags,
+} from '@nestjs/swagger';
 import RoleGuard from '../users/role.guard';
 import Role from '../users/roles.enum';
 import { string } from '@hapi/joi';
@@ -37,16 +43,15 @@ export class AuthenticationController {
         dayofbirth: { type: 'string' },
         gender: { type: 'string' },
         phoneNumber: { type: 'number' },
-        role: {type : 'string'}
+        role: { type: 'string' },
       },
     },
   })
   @ApiParam({
     name: 'role',
     description: 'User Role',
-    enum: Role
+    enum: Role,
   })
-
   @Post('register')
   async register(@Body() registrationData: RegisterDto) {
     return this.authenticationService.register(registrationData);
@@ -70,10 +75,6 @@ export class AuthenticationController {
     user.password = undefined;
     return response.send(user);
   }
-
-
- 
-
 
   @Post('log-out')
   async logOut(@Res() response: Response) {
