@@ -6,30 +6,24 @@ import { ApiTags } from '@nestjs/swagger';
 import Role from './roles.enum';
 import RoleGuard from './role.guard';
 
-
 @Crud({
   model: {
     type: User,
   },
   query: {
-    join:{
+    join: {
       reservation: {
-        eager: true
-      }
-    }
-  }
+        eager: true,
+      },
+    },
+  },
 })
 @UseGuards(RoleGuard(Role.Admin))
 @Controller('users')
 @ApiTags('Users')
 export class UsersController implements CrudController<User> {
-  constructor(public service: UsersService,
-    private readonly usersService: UsersService) {
-    
-  }
-
-  // @Post('test')
-  // async register(@Body() registrationData: createUserDto) {
-  //   return this.usersService.create(registrationData);
-  // }
+  constructor(
+    public service: UsersService,
+    private readonly usersService: UsersService,
+  ) {}
 }
