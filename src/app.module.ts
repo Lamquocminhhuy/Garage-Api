@@ -3,13 +3,8 @@ import { ConfigModule } from '@nestjs/config';
 import * as Joi from '@hapi/joi';
 import { DatabaseModule } from './database/database.module';
 import { UsersModule } from './users/users.module';
-import { AirlineModule } from './airline/airline.module';
-import { FlightModule } from './flight/flight.module';
-import { ReservationModule } from './reservation/reservation.module';
 import { AppController } from './app.controller';
 import { AuthenticationModule } from './authentication/authentication.module';
-import { PaypalModule } from './paypal/paypal.module';
-
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -26,11 +21,8 @@ import { PaypalModule } from './paypal/paypal.module';
     }),
     DatabaseModule,
     UsersModule,
-    AirlineModule,
-    FlightModule,
-    ReservationModule,
+
     AuthenticationModule,
-    PaypalModule,
   ],
   controllers: [AppController],
   providers: [],

@@ -10,11 +10,6 @@ export class CreateUserDto {
 
   lastName: string;
 
-  address: string;
-
-  @IsDateString()
-  dob: Date;
-
   gender: string;
 
   phoneNumber: string;

@@ -4,7 +4,7 @@ import User from './user.entity';
 import { UsersService } from './users.service';
 import { ApiTags } from '@nestjs/swagger';
 import Role from './roles.enum';
-import RoleGuard from './role.guard';
+// import RoleGuard from './role.guard';
 import CreateUserDto from './dto/createUser.dto';
 
 @Crud({
@@ -25,7 +25,7 @@ import CreateUserDto from './dto/createUser.dto';
     },
   },
 })
-@UseGuards(RoleGuard(Role.Admin))
+// @UseGuards(RoleGuard(Role.Admin))
 @Controller('users')
 @ApiTags('Users')
 export class UsersController implements CrudController<User> {

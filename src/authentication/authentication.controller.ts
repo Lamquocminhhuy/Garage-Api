@@ -23,9 +23,8 @@ import {
   ApiQuery,
   ApiTags,
 } from '@nestjs/swagger';
-import RoleGuard from '../users/role.guard';
-import Role from '../users/roles.enum';
-import { string } from '@hapi/joi';
+
+
 
 @Controller('authentication')
 @ApiTags('Authentication')
@@ -46,11 +45,6 @@ export class AuthenticationController {
         role: { type: 'string' },
       },
     },
-  })
-  @ApiParam({
-    name: 'role',
-    description: 'User Role',
-    enum: Role,
   })
   @Post('register')
   async register(@Body() registrationData: RegisterDto) {
