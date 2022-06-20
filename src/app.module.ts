@@ -5,6 +5,10 @@ import { DatabaseModule } from './database/database.module';
 import { UsersModule } from './users/users.module';
 import { AppController } from './app.controller';
 import { AuthenticationModule } from './authentication/authentication.module';
+import { GarageModule } from './garage/garage.module';
+import { ServiceModule } from './service/service.module';
+import { ReservationModule } from './reservation/reservation.module';
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -23,6 +27,12 @@ import { AuthenticationModule } from './authentication/authentication.module';
     UsersModule,
 
     AuthenticationModule,
+
+    GarageModule,
+
+    ServiceModule,
+
+    ReservationModule,
   ],
   controllers: [AppController],
   providers: [],

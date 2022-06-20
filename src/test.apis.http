@@ -18,8 +18,8 @@ POST http://localhost:3000/authentication/log-in
 Content-Type: application/json
 
 {
-  "email": "admin@gmail.com",
-  "password": "admin"
+  "email": "tester68@gmail.com",
+  "password": "tester68"
 }
 
 
@@ -65,25 +65,43 @@ content-type: application/json
     "airline": 1
 }
 
-### Get all flights
-GET http://localhost:3000/flight
+### Get all garage
+GET http://localhost:3000/garage
 
-### Create Airline
-POST http://localhost:3000/airline
+### Create garage
+POST http://localhost:3000/garage
 content-type: application/json
 
 {
-    "no_of_seats": 90
+  "name" : "Mers"
 }
 
-### Get all airline
-GET http://localhost:3000/airline
-
-
-### PAYPALPOST 
-POST http://localhost:3000/paypal/order
+### Create service
+POST http://localhost:3000/service
 content-type: application/json
 
 {
+    "name": "Tire Replacement",
+    "price": "2000",
+    "time" : "60",
+    "description" : "Replacement 4 tires for car",
+    "garage":  {
+      "id": 2
+    }
+}
+
+### Create reservation
+POST http://localhost:3000/reservation
+content-type: application/json
+
+{
+    "r_date": "01/20/2022",
+    "service":  [
+      {"id": 1}, 
+      { "id": 2}
+      ]
+}
+
+### Get reservation
  
-}
+GET http://localhost:3000/reservation
