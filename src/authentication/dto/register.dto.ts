@@ -3,9 +3,10 @@ export class RegisterDto {
   password: string;
   firstName: string;
   lastName: string;
+  address: string;
+  dayofbirth: string;
   gender: string;
   phoneNumber: string;
-  role: string;
 }
 
 export default RegisterDto;
