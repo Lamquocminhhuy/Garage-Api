@@ -27,7 +27,7 @@ import CreateUserDto from './dto/createUser.dto';
 })
 // @UseGuards(RoleGuard(Role.Admin))
 @Controller('users')
-@ApiTags('Users')
+@ApiTags('Users APIs for Admin')
 export class UsersController implements CrudController<User> {
   constructor(
     public service: UsersService,

@@ -3,9 +3,9 @@ POST http://localhost:3000/authentication/register
 Content-Type: application/json
 
 {
-  "email": "dweswswsdeded@gmail.com",
-  "password": "admin",
-  "firstName": "tester69",
+  "email": "tester68@gmail.com",
+  "password": "tester68",
+  "firstName": "test",
   "lastName": "tester69",
   "address": "tester69",
   "dayofbirth": "01/01/2000",

@@ -3,7 +3,6 @@ import { ConfigModule } from '@nestjs/config';
 import * as Joi from '@hapi/joi';
 import { DatabaseModule } from './database/database.module';
 import { UsersModule } from './users/users.module';
-import { AppController } from './app.controller';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { GarageModule } from './garage/garage.module';
 import { ServiceModule } from './service/service.module';
@@ -34,7 +33,7 @@ import { ReservationModule } from './reservation/reservation.module';
 
     ReservationModule,
   ],
-  controllers: [AppController],
+  controllers: [],
   providers: [],
 })
 export class AppModule {}
