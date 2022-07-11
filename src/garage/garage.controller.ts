@@ -1,6 +1,7 @@
 import { Controller } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { Crud, CrudController } from '@nestjsx/crud';
+import GarageDto from './dto/create-garage.dto';
 import Garage from './garage.entity';
 import { GarageService } from './garage.service';
 
@@ -9,6 +10,7 @@ import { GarageService } from './garage.service';
   model: {
     type: Garage,
   },
+  dto: { create: GarageDto },
   query: {
     join: {
       service: {
