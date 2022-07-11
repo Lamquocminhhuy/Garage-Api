@@ -5,11 +5,11 @@ Content-Type: application/json
 {
   "email": "tester68@gmail.com",
   "password": "tester68",
-  "firstName": "test",
-  "lastName": "tester69",
-  "address": "tester69",
+  "firstName": "Admin",
+  "lastName": "Super",
+  "address": "Earth",
   "dayofbirth": "01/01/2000",
-  "gender": "male",
+  "gender": "Male",
   "phoneNumber": "0123456789"
 }
 
@@ -34,18 +34,6 @@ Content-Type: application/json
 GET http://localhost:3000/authentication/
 
 
-### Create reservation
-POST http://localhost:3000/reservation
-content-type: application/json
-
-{
-    "r_date": "04/15/2022",
-    "total_amount": 1,
-    "class": "Business",
-    "flight": [{
-        "id": 1
-    }]
-}
 
 
 
@@ -81,14 +69,19 @@ POST http://localhost:3000/service
 content-type: application/json
 
 {
-    "name": "Tire Replacement",
-    "price": "2000",
+    "name": "Oil Change",
+    "price": "500",
     "time" : "60",
-    "description" : "Replacement 4 tires for car",
+    "description" : "Oil Change",
     "garage":  {
-      "id": 2
+      "id": 1
     }
 }
+
+
+### Get All Services
+GET http://localhost:3000/service
+
 
 ### Create reservation
 POST http://localhost:3000/reservation
@@ -96,10 +89,8 @@ content-type: application/json
 
 {
     "r_date": "01/20/2022",
-    "service":  [
-      {"id": 1}, 
-      { "id": 2}
-      ]
+    "r_time": "01:00",
+    "service":  3
 }
 
 ### Get reservation
