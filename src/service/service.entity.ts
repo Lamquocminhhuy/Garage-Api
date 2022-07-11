@@ -1,4 +1,10 @@
-import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import Garage from '../garage/garage.entity';
 import Reservation from '../reservation/reservation.entity';
 
@@ -22,11 +28,11 @@ class Service {
   @ManyToOne(() => Garage, (garage: Garage) => garage.name)
   public garage: Garage;
 
-  @ManyToOne(() => Reservation, (reservation: Reservation) => reservation.service)
-  public reservation: Reservation;
-
-
-
+  @OneToMany(
+    () => Reservation,
+    (reservation: Reservation) => reservation.service,
+  )
+  public reservation: Reservation[];
 }
 
 export default Service;
