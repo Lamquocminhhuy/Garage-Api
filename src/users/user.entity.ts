@@ -4,6 +4,7 @@ import {
   Column,
   Entity,
   ManyToMany,
+  OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import Role from './roles.enum';
@@ -18,7 +19,6 @@ class User {
   @Column({ unique: true })
   public email: string;
 
-  
   @Column()
   public password: string;
 
@@ -34,9 +34,8 @@ class User {
   @Column()
   public phoneNumber: string;
 
-  @ManyToMany(() => Reservation, (reservation: Reservation) => reservation.user)
+  @OneToMany(() => Reservation, (reservation: Reservation) => reservation.user)
   public reservation?: Reservation[];
-
 }
 
 export default User;

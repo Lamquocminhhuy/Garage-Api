@@ -15,7 +15,7 @@ import CreateUserDto from './dto/createUser.dto';
   dto: {
     create: CreateUserDto,
     update: CreateUserDto,
-    replace: CreateUserDto
+    replace: CreateUserDto,
   },
   query: {
     join: {
@@ -27,7 +27,7 @@ import CreateUserDto from './dto/createUser.dto';
 })
 // @UseGuards(RoleGuard(Role.Admin))
 @Controller('users')
-@ApiTags('Users APIs for Admin')
+@ApiTags('Users')
 export class UsersController implements CrudController<User> {
   constructor(
     public service: UsersService,
