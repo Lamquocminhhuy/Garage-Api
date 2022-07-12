@@ -10,10 +10,9 @@ export class ReservationService extends TypeOrmCrudService<Reservation> {
     super(repo);
   }
 
-  public async creatReservation(reservation: CreateReservationDto, userId) {
+  public async creatReservation(reservation: CreateReservationDto) {
     const newReservation = await this.repo.create({
       ...reservation,
-      user: userId,
     });
 
     let createReservation = await this.repo.save(newReservation);

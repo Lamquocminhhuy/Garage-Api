@@ -20,9 +20,11 @@ import { ReservationService } from './reservation.service';
       },
       service: { eager: true },
       garage: { eager: true },
+      status: { eager: true },
     },
   },
 })
+// @UseGuards(JwtAuthenticationGuard)
 @Controller('reservation')
 export class ReservationController implements CrudController<Reservation> {
   constructor(
@@ -31,14 +33,13 @@ export class ReservationController implements CrudController<Reservation> {
   ) {}
 
   @Override()
-  @UseGuards(JwtAuthenticationGuard)
   createOne(
     @Body() reservation: CreateReservationDto,
-    @Req() request: RequestWithUser,
+    // @Req() request: RequestWithUser,
   ) {
     return this.reservationService.creatReservation(
       reservation,
-      request.user.id,
+      // request.user.id,
     );
   }
 }

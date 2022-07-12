@@ -90,7 +90,9 @@ content-type: application/json
 {
     "r_date": "01/20/2022",
     "r_time": "01:00",
-    "service":  3
+    "service":  3,
+    "user": 1,
+    "status": 1
 }
 
 ### Get reservation

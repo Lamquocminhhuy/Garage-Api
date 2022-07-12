@@ -24,8 +24,6 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 
-
-
 @Controller('authentication')
 @ApiTags('Authentication')
 export class AuthenticationController {
@@ -67,6 +65,7 @@ export class AuthenticationController {
     const cookie = this.authenticationService.getCookieWithJwtToken(user.id);
     response.setHeader('Set-Cookie', cookie);
     user.password = undefined;
+
     return response.send(user);
   }
 
@@ -76,6 +75,7 @@ export class AuthenticationController {
       'Set-Cookie',
       this.authenticationService.getCookieForLogOut(),
     );
+
     return response.sendStatus(200);
   }
 

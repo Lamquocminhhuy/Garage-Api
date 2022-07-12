@@ -7,6 +7,7 @@ import { AuthenticationModule } from './authentication/authentication.module';
 import { GarageModule } from './garage/garage.module';
 import { ServiceModule } from './service/service.module';
 import { ReservationModule } from './reservation/reservation.module';
+import { StatusModule } from './status/status.module';
 
 @Module({
   imports: [
@@ -32,6 +33,8 @@ import { ReservationModule } from './reservation/reservation.module';
     ServiceModule,
 
     ReservationModule,
+
+    StatusModule,
   ],
   controllers: [],
   providers: [],

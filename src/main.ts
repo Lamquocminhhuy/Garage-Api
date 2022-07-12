@@ -7,7 +7,10 @@ import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.enableCors();
+  app.enableCors({
+    origin: true, //included origin as true
+    credentials: true,
+  });
   app.use(cookieParser());
 
   const configService = app.get(ConfigService);
@@ -23,7 +26,7 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
   const port = configService.get('PORT') ? configService.get('PORT') : 3000;
- 
+
   await app.listen(port);
 }
 bootstrap();
